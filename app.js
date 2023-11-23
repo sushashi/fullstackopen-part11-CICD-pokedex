@@ -12,7 +12,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('branch-again')
+  res.send('test')
 })
 
 app.get('/health', (req, res) => {
