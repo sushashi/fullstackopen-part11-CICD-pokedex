@@ -12,11 +12,11 @@ app.listen(PORT, () => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('new-branch')
+  res.send('new-branch-no-error')
 })
 
 app.get('/health', (req, res) => {
-  throw 'error...'
+  // throw 'error...'
   // eslint-disable-next-line no-unreachable
   res.send('ok')
 })
