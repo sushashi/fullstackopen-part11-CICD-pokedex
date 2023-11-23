@@ -40,7 +40,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checjout@v3
-        with: fetch-depth: '0'
+        with: 
+          fetch-depth: '0'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.64.0
         env:
