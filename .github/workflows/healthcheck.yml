@@ -20,7 +20,7 @@ jobs:
           details: Health Check
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           text: Health Check
-            - name: Discord publish Health
+      - name: Discord publish Health
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
         with:
