@@ -47,8 +47,6 @@ jobs:
         if: failure()
         with:
           severity: error
-          description: '### -Title [Link]{https://google.com}
-            ### - Second '
           details: Test Failed!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           text: Build failed
