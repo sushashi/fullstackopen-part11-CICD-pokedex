@@ -2,7 +2,7 @@ name: Health Check
 
 on:
   schedule:
-    - cron: '10 16 * * *'
+    - cron: '10 16,17,18 * * *'
 
 jobs:
   health_check:
@@ -12,3 +12,20 @@ jobs:
         uses: jtalk/url-health-check-action@v3
         with:
           url: https://fso-part11-pokedex.onrender.com/health
+      - name: Discord publish Health
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
+        with:
+          severity: info
+          details: Health Check
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          text: Health Check
+            - name: Discord publish Health
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: Health Check Failure !
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          text: Health Check Failure !
+
