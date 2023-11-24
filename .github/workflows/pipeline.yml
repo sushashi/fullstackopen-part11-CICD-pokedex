@@ -47,8 +47,9 @@ jobs:
         if: failure()
         with:
           severity: error
+          description: '### -Title [Link]{https://google.com}
+            ### - Second '
           details: Test Failed!
-           Commit SHA { toJson(github.sha) } www.google.ch
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           text: Build failed
   
